@@ -10,6 +10,8 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
   }
 });
 
+const config = require('./hardhat_config');
+
 // You need to export an object to set up your config
 // Go to https://hardhat.org/config/ to learn more
 
@@ -17,5 +19,6 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
  * @type import('hardhat/config').HardhatUserConfig
  */
 module.exports = {
-  solidity: "0.8.4",
+  solidity: config.solidity,
+  networks: config.networks,
 };
